@@ -11,7 +11,7 @@ class BuyerController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -20,12 +20,11 @@ class BuyerController extends ApiController
         return $this->showAll($compradores);
     }
 
-
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
