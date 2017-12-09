@@ -96,7 +96,12 @@ class Handler extends ExceptionHandler
             }
 
         }
-        return parent::render($request, $exception);
+
+        if (config('APP_DEBUG')) {
+            return parent::render($request, $exception);
+        }
+        return $this->errorResponse('Falla inesperada', 500);
+
     }
 
     protected function unauthenticated($request, AuthenticationException $exception)
