@@ -12,7 +12,7 @@ class UserController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -34,8 +34,8 @@ class UserController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \App\Http\Requests\StoreUser $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(StoreUser $request)
     {
@@ -66,26 +66,23 @@ class UserController extends ApiController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \App\User $user
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $usuario = User::findOrFail($id);
-
-        return $this->showOne($usuario, 201);
+        return $this->showOne($user);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param \App\User $user
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user = User::findOrFail($id);
         $reglas = [
             'email' => 'email|unique:users,email,' . $user->id,
             'password' => 'min:6|confirmed',
@@ -120,14 +117,12 @@ class UserController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param \App\User $user
+     * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::findOrFail($id);
-
         $user->delete();
 
         return $this->showOne($user);
