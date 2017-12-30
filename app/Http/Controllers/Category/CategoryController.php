@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Category;
 use App\Category;
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class CategoryController extends ApiController
 {
@@ -65,10 +64,13 @@ class CategoryController extends ApiController
             'name',
             'description',
         ]));
+
         if ($category->isClean()) {
             return $this->errorResponse('Debe especificar al menos un valor diferente para actualizar', 422);
         }
+
         $category->save();
+
         return $this->showOne($category);
     }
 
