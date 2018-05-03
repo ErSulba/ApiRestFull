@@ -7,6 +7,10 @@ use App\Category;
 use App\Seller;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property int seller_id
+ * @property mixed status
+ */
 class Product extends Model
 {
     use SoftDeletes;
