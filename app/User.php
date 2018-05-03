@@ -13,6 +13,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property int $id
  * @property \Carbon\Carbon $updated_at
  * @property string $name
+ * @property mixed verified
+ * @property mixed admin
  */
 class User extends Authenticatable
 {
