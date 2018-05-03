@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * This is a trait in order to abstract some API calls in laravel 5.* so you don't have to repeat so much code in your controllers
+ *
+ */
 namespace App\Traits;
 
 use Illuminate\Database\Eloquent\Model;
@@ -8,6 +12,8 @@ use Illuminate\Support\Collection;
 trait ApiResponser
 {
     /**
+     * Sends a Successfull response with a given code
+     *
      * @param $data
      * @param $code
      * @return \Illuminate\Http\JsonResponse
@@ -18,6 +24,8 @@ trait ApiResponser
     }
 
     /**
+     * Sends an error code with a given code
+     *
      * @param $message
      * @param $code
      * @return \Illuminate\Http\JsonResponse
@@ -28,6 +36,8 @@ trait ApiResponser
     }
 
     /**
+     * Sends a json with a collection of data with a 200 http code as default
+     *
      * @param \Illuminate\Support\Collection $collection
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
@@ -38,6 +48,8 @@ trait ApiResponser
     }
 
     /**
+     * sends a json response with only one result
+     *
      * @param \Illuminate\Database\Eloquent\Model $instance
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
