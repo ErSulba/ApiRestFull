@@ -25,6 +25,10 @@ class Product extends Model
         'seller_id',
     ];
 
+    protected $hidden = [
+        'pivot'
+    ];
+
     function estaDisponible()
     {
         return $this->status == Product::PRODUCTO_DISPONIBLE;
