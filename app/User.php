@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $delete_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property int $id
+ * @property \Carbon\Carbon $updated_at
+ * @property string $name
+ */
 class User extends Authenticatable
 {
     use Notifiable, SoftDeletes;
@@ -16,7 +24,7 @@ class User extends Authenticatable
     const USUARIO_REGULAR = 'false';
 
     protected $table = 'users';
-    protected $dates = ['delete_at'];
+    protected $dates = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *
