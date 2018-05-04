@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property mixed categories
  * @property mixed quantity
  * @property mixed id
+ * @property mixed image
  */
 class Product extends Model
 {
