@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int seller_id
  * @property mixed status
  * @property mixed transactions
+ * @property mixed categories
  */
 class Product extends Model
 {
