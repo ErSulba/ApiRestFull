@@ -41,7 +41,8 @@ class ProductCategoryController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Product $product
+     * @param Category $category
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Product $product, Category $category)
