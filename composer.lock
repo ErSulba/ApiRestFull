@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c9aa57a209c74f1b3179503f587e911",
+    "content-hash": "184673632416f73065835d992f76f8c6",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -684,6 +684,49 @@
                 "storage"
             ],
             "time": "2017-08-06T17:41:04+00:00"
+        },
+        {
+            "name": "malahierba-lab/chile-rut",
+            "version": "5.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malahierba-lab/chile-rut.git",
+                "reference": "cea5ed7b73c06a54220ae9291450776c37ad3059"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malahierba-lab/chile-rut/zipball/cea5ed7b73c06a54220ae9291450776c37ad3059",
+                "reference": "cea5ed7b73c06a54220ae9291450776c37ad3059",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*",
+                "php": ">=5.5.18"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Malahierba\\ChileRut\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "malahierba team",
+                    "email": "lab@malahierba.cl",
+                    "homepage": "http://malahierba.cl"
+                }
+            ],
+            "description": "Librería Laravel para el manejo y validación de RUT chileno",
+            "keywords": [
+                "chile",
+                "laravel",
+                "rut"
+            ],
+            "time": "2017-07-22T23:42:43+00:00"
         },
         {
             "name": "monolog/monolog",
